@@ -1,0 +1,118 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DDGS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction</title>
+        <link rel="stylesheet" href="fonts/avenir-next/stylesheet.css">
+        <link rel="stylesheet" href="fonts/segoe-print/stylesheet.css">
+        <link rel="stylesheet" href="css/carousel.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/selection_panel.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/carousel.js"></script>
+        <script src="js/selection_panel.js"></script>
+        <script src="js/generation.js"></script>
+        <script src="js/application.js"></script>
+		<script src="js/main.js"></script>
+    </head>
+    <body>
+        <div id="main">
+            <div id="title" class="x-gradient-font">
+                <span style="font-size: 37px;">D<sup>2</sup>GS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction</span>
+            </div>
+            <div id="authors">
+                <div>Meixi Song</a><sup>2*</sup></div>
+                <div>Xin Lin</a><sup>3*</sup></div>
+                <div>Dizhe Zhang</a><sup>1† </sup></div>
+                <div>Haodong Li</a><sup>3</sup></div>
+                <div>Xiangtai Li</a><sup>4</sup></div>
+                <div>Bo Du</a><sup>5</sup></div>
+                <div><a class="link" href="https://scholar.google.com.hk/citations?user=SSI90d4AAAAJ&hl=en&oi=ao">Lu Qi</a><sup>1,5</sup></div>
+            </div>
+            <div id="institution">
+                <div><sup>1</sup><a class="link" href="https://www.insta360.com/cn/">Insta360 Research</a></div>
+                <div><sup>2</sup><a class="link" href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a></div>
+                <div><sup>3</sup><a class="link" href="https://ucsd.edu/">University of California San Diego</a></div>
+                <div><sup>4</sup><a class="link" href="https://www.ntu.edu.sg/">Nanyang Technological University</a></div>
+                <div><sup>5</sup><a class="link" href="https://admission.whu.edu.cn/">Wuhan University</a></div>
+            </div>
+            <div id="institution">
+                <div><sup>*</sup>Equal Contribution</div>
+                <div><sup>†</sup>Project Leader</div>
+                <div><sup>‡</sup>Corresponding Author</div>
+            </div>
+
+            <div id="links">
+                <div><a id="code" href="https://github.com/Willacold/DDGS">Code</a></div>
+                <!-- <div><a id="demo" href="https://huggingface.co/spaces/Microsoft/TRELLIS">Demo</a></div> -->
+            </div>
+
+            <div id="teaser">
+                <div style="width: 100%;"><img src="assets/teaser.png" alt="TRELLIS Teaser" style="width: 100%; height: auto;"></div>
+            </div>
+            <div id="abstract" class="x-gradient-block">
+                Recent advances in 3D Gaussian Splatting (3DGS) enable real-time, high-fidelity novel view synthesis (NVS) with explicit 3D representations. However, performance degradation and instability remain significant under sparse-view conditions. In this work, we identify two key failure modes under sparse-view conditions: overfitting in regions with excessive Gaussian density near the camera, and underfitting in distant areas with insufficient Gaussian coverage. To address these challenges, we propose a unified framework D<sup>2</sup>GS, comprising two key components: a Depth-and-Density Guided Dropout strategy that suppresses overfitting by adaptively masking redundant Gaussians based on density and depth, and a Distance-Aware Fidelity Enhancement module that improves reconstruction quality in under-fitted far-field areas through targeted supervision. Moreover, we introduce a new evaluation metric to quantify the stability of learned Gaussian distributions, providing insights into the robustness of the sparse-view 3DGS. Extensive experiments on multiple datasets demonstrate that our method significantly improves both visual quality and robustness under sparse view conditions. The source code and trained models will be made publicly available.
+            </div>
+
+            <div class="x-section-title"><div class="x-gradient-font">Qualitative Evaluation <span style="font-size: 40px; font-weight:600;">|</span> LLFF dataset</div></div>
+            <p>Qualitative Comparison on LLFF dataset with 3-view and 6-view. Comparisons were conducted with 3DGS, CoR-GS, DropGaussian. </p>
+            <div id="results-llff-carousel"></div>
+
+            <div class="x-section-title"><div class="x-gradient-font">Qualitative Evaluation <span style="font-size: 40px; font-weight:600;">|</span> MipNeRF360 dataset</div></div>
+            <p>Qualitative Comparison on MipNeRF360 dataset with 12-view. Comparisons were conducted with 3DGS, CoR-GS, DropGaussian.</p>
+            <div style="display: flex; justify-content: center; margin: 20px 0;">
+                <div class="x-card" style="min-width: 400px; margin: 10px;">
+                    <div style="width: 100%; text-align: center;">
+                        <img src="assets/MIP12.png" alt="Qualitative Comparison on MipNeRF360 dataset with 12-view" style="width: 100%; height: auto; border-radius: 8px;">
+                    </div>
+                    <div class="caption" style="text-align: center; margin-top: 10px;">
+                        <div style="font-weight: 600; font-size: 16px;">
+                            Qualitative Comparison on MipNeRF360 dataset with 12-view
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="x-section-title"><div class="x-gradient-font">Quantitative Evaluation <span style="font-size: 40px; font-weight:600;">|</span> LLFF dataset</div></div>
+            <p>Performance comparisons of sparse-view synthesis on LLFF dataset.</p>
+            <div style="width: 100%; text-align: center; margin: 20px 0;">
+                <img src="assets/llff.jpg" alt="Performance comparisons of sparse-view synthesis on LLFF dataset" style="width: 100%; max-width: 800px; height: auto;">
+            </div>
+
+            <div class="x-section-title"><div class="x-gradient-font">Quantitative Evaluation <span style="font-size: 40px; font-weight:600;">|</span> MipNeRF360 dataset</div></div>
+            <p>Performance comparisons of sparse-view synthesis on MipNeRF360 dataset.</p>
+            <div style="width: 100%; text-align: center; margin: 20px 0;">
+                <img src="assets/mip.jpg" alt="Performance comparisons of sparse-view synthesis on MipNeRF360 dataset" style="width: 90%; max-width: 700px; height: auto;">
+            </div>
+
+            <div class="x-section-title"><div class="x-gradient-font">Inter-Model Robustness <span style="font-size: 40px; font-weight:600;">|</span> LLFF dataset</div></div>
+            <p>Repeated training using the same algorithm and configuration can produce results with considerable variance, leading to large discrepancies in rendering quality. This highlights the importance of quantifying the divergence among independently trained models under identical settings to assess model robustness. To this end, we propose Inter-Model Robustness (IMR), a novel metric specifically designed for 3DGS, grounded in the theory of 2-Wasserstein Distance and Optimal Transport (OT) over Gaussian point clouds. </p>
+            <div id="results-imr-selection"></div>
+
+            <div class="x-section-title"><div class="x-gradient-font">Methodology</div></div>
+            <p>
+                <img src="assets/pipeline.png" alt="Pipeline of the method" style="width: 100%;">
+            </p>
+            <p>
+                The proposed D<sup>2</sup>GS mainly consists of two key components: a
+                <strong>D</strong>epth-and-<strong>D</strong>ensity guided <strong>D</strong>ropout (DD-Drop) mechanism and
+                <strong>D</strong>istance-<strong>A</strong>ware <strong>F</strong>idelity <strong>E</strong>nhancement (DAFE), to improve the stability and spatial completeness of scene reconstruction under sparse-view settings.
+                DD-Drop assigns each Gaussian a dropout score based on local density and camera distance, indicating regions prone to overfitting. High-scoring Gaussians would be dropped with a higher probability to suppress aliasing and improve rendering fidelity.
+                In addition, DAFE avoids underfitting by boosting supervision in distant regions using depth priors.
+              </p>
+              
+
+            <!-- <div class="x-section-title"><div class="x-gradient-font">Citation</div></div>
+            <p>
+                If you find our work useful, please consider citing:
+            </p>
+            <p class="bibtex x-gradient-block"> -->
+
+        </div>
+        <div id="bottombar">
+            <div class="row">
+                <div style="text-align: center; width: 100%;"><span style="font-size: 18px; font-weight: 500;">D<sup>2</sup>GS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction</span></div>
+            </div>
+        </div>
+    </body>
+</html>
