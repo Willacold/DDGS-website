@@ -300,9 +300,9 @@ video {
 }
 
 #institution {
-    margin: 0px 16px;
+    margin: 8px 32px;
     color: black;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -312,7 +312,7 @@ video {
 }
 
 #institution div {
-    margin: 0px 0px;
+    margin: 0px 4px;
 }
 
 #conference {
